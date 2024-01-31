@@ -24,7 +24,7 @@ class LIFOCache(BaseCaching):
                 self.order.remove(key)
             self.order.append(key)
 
-        if len(self.cache_data) > self.MAX_ITEMS:
+        if len(self.cache_data.items()) > self.MAX_ITEMS:
             removed_key = self.order.pop(3)
             self.cache_data.pop(removed_key)
             print(f'DISCARD: {removed_key}')
