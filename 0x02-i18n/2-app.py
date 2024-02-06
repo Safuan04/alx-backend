@@ -16,7 +16,7 @@ class Config:
     BABEL_DEFAULT_TIMEZONE = "UTC"
 
 
-def get_locale():
+def get_locale() -> str:
     """ Determine the best match with our supported languages
     """
     return request.accept_languages.best_match(app.config['LANGUAGES'])
