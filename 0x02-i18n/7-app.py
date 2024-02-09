@@ -19,7 +19,7 @@ def get_timezone():
             timezone(timezone_url)
             return timezone(timezone_url)
         except UnknownTimeZoneError:
-            print(f'Invalid timezone: {timezone_url}')
+            print(f'timezone doesnt exist: {timezone_url}')
 
     if hasattr(g, 'user') and g.user:
         users_timezone = g.user.get('timezone')
@@ -28,7 +28,7 @@ def get_timezone():
                 timezone(users_timezone)
                 return timezone(users_timezone)
             except UnknownTimeZoneError:
-                print(f"Invalid timezone: {users_timezone}")
+                print(f"timezone doesnt exist: {users_timezone}")
 
     default_timezone = Config.BABEL_DEFAULT_TIMEZONE
     return timezone(default_timezone)
