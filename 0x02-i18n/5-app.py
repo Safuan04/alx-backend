@@ -28,6 +28,7 @@ def get_user():
             return user
     return None
 
+
 @app.before_request
 def before_request():
     """ sets globally the user if found
