@@ -102,14 +102,14 @@ def welcome():
     -   and “Hello world” as header (<h1>)
     """
     username = None
-    timezone = get_timezone
+    timezone = get_timezone()
     current_time = datetime.now(timezone)
     print(current_time)
     updated_time = format_datetime(current_time)
     print(updated_time)
     if hasattr(g, 'user') and g.user:
         username = g.user.get('name')
-    return render_template('5-index.html', username=username,
+    return render_template('index.html', username=username,
                            timezone=updated_time)
 
 
