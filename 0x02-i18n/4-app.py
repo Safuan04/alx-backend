@@ -22,7 +22,7 @@ app.config.from_object(Config)
 
 @babel.localeselector
 def get_locale() -> str:
-    """ Determine the best match with our supported languages
+    """ Determine the best match lang with our supported languages
     """
     locale = request.args.get('locale')
     if locale and locale in Config.LANGUAGES:
@@ -35,7 +35,7 @@ def welcome():
     """ Simply outputs “Welcome to Holberton” as page title (<title>)
     -   and “Hello world” as header (<h1>)
     """
-    return render_template('3-index.html')
+    return render_template('4-index.html')
 
 
 if __name__ == '__main__':
